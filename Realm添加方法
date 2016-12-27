@@ -1,0 +1,10 @@
+1.下载Realm的最新版本并解压； //https://realm.io/cn/docs/swift/latest/
+2.前往您 Xcode 工程的”General”设置页。前往适合您项目的 Swift 版本目录，从其中的 ios/ 、osx/、tvos/ 或者 watchos/ 文件夹中，拖拽RealmSwift.framework 和Realm.framework到”Embedded Binaries”选项中，确认Copy items if needed被选中（除非您的项目中需要在多个平台中使用 Realm），并点击Finish；
+3.在您的测试目标的”Build Settings”中，添加RealmSwift.framework的上级目录到您的”Framework Search Paths”中；
+
+
+##上架
+如果您打算在您的 iOS、tcOS 或者 watchOS 工程中使用 Realm，请在您的 app 目标的“Build Phases”中创建一个新的”Run Script Phase”，并在文本框中写入
+
+bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh"
+因为要绕过这个APP商店提交的bug，这一步在打包二进制发布版本时是必须的。
