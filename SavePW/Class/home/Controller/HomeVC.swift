@@ -316,8 +316,6 @@ extension HomeVC{
     
     func loadCache(by condition:String){
         
-//        let predicate = NSPredicate(format: "color = %@ AND name BEGINSWITH %@", "棕黄色", "大")
-//        tanDogs = realm.objects(Dog).filter(predicate)
         let predicate = NSPredicate(format:"nickName CONTAINS %@",condition)
          let realmData = realm.objects(SPAccountModel.self).filter(predicate)
         self.dataSources.removeAll()

@@ -14,6 +14,8 @@
 		A81158C81E116DC100C55823 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80A53071E1167AB00CD3AEC /* RealmSwift.framework */; };
 		A81158C91E116DC100C55823 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A80A53071E1167AB00CD3AEC /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A81158CD1E116E3100C55823 /* Realm添加方法 in Resources */ = {isa = PBXBuildFile; fileRef = A81158CC1E116E3100C55823 /* Realm添加方法 */; };
+		A8331DC31E12A86300665E18 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8331DC21E12A86300665E18 /* MyViewController.swift */; };
+		A8331DC61E12AEB200665E18 /* PassSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8331DC51E12AEB200665E18 /* PassSettingTableViewController.swift */; };
 		A84D43051E120B5300BDA657 /* SPAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D42F91E120B5300BDA657 /* SPAddVC.swift */; };
 		A84D43061E120B5300BDA657 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D42FE1E120B5300BDA657 /* HomeVC.swift */; };
 		A84D43081E120DD100BDA657 /* HMUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84D43071E120DD100BDA657 /* HMUserDefaults.swift */; };
@@ -49,6 +51,8 @@
 		A80A53061E1167AB00CD3AEC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A80A53071E1167AB00CD3AEC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A81158CC1E116E3100C55823 /* Realm添加方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Realm添加方法"; sourceTree = "<group>"; };
+		A8331DC21E12A86300665E18 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		A8331DC51E12AEB200665E18 /* PassSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassSettingTableViewController.swift; sourceTree = "<group>"; };
 		A84D42F91E120B5300BDA657 /* SPAddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAddVC.swift; sourceTree = "<group>"; };
 		A84D42FE1E120B5300BDA657 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A84D43071E120DD100BDA657 /* HMUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMUserDefaults.swift; sourceTree = "<group>"; };
@@ -105,9 +109,43 @@
 			path = "swift-3.0";
 			sourceTree = "<group>";
 		};
+		A8331DBE1E12A84800665E18 /* my */ = {
+			isa = PBXGroup;
+			children = (
+				A8331DBF1E12A84800665E18 /* Controller */,
+				A8331DC01E12A84800665E18 /* Model */,
+				A8331DC11E12A84800665E18 /* View */,
+			);
+			path = my;
+			sourceTree = "<group>";
+		};
+		A8331DBF1E12A84800665E18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8331DC21E12A86300665E18 /* MyViewController.swift */,
+				A8331DC51E12AEB200665E18 /* PassSettingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8331DC01E12A84800665E18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8331DC11E12A84800665E18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A84D42F61E120B5300BDA657 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A8331DBE1E12A84800665E18 /* my */,
 				A84D42F71E120B5300BDA657 /* add */,
 				A84D42FC1E120B5300BDA657 /* home */,
 				A84D43011E120B5300BDA657 /* homeDetail */,
@@ -384,10 +422,12 @@
 			files = (
 				A85B0FB81E10E00300026CF3 /* ViewController.swift in Sources */,
 				A84D430A1E12129E00BDA657 /* SPAccountModel.swift in Sources */,
+				A8331DC61E12AEB200665E18 /* PassSettingTableViewController.swift in Sources */,
 				A84D43061E120B5300BDA657 /* HomeVC.swift in Sources */,
 				A84D43051E120B5300BDA657 /* SPAddVC.swift in Sources */,
 				A84D43081E120DD100BDA657 /* HMUserDefaults.swift in Sources */,
 				A85B0FC81E10EB5A00026CF3 /* AppConstants.swift in Sources */,
+				A8331DC31E12A86300665E18 /* MyViewController.swift in Sources */,
 				A85B0FB61E10E00300026CF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@
         <!--设置-->
         <scene sceneID="mTJ-Ae-6Bl">
             <objects>
-                <viewController id="YuT-Nd-xmV" sceneMemberID="viewController">
+                <viewController id="YuT-Nd-xmV" customClass="MyViewController" customModule="SavePW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WC0-g0-dBE"/>
                         <viewControllerLayoutGuide type="bottom" id="hqE-Ek-G67"/>
@@ -21,33 +21,66 @@
                     <view key="view" contentMode="scaleToFill" id="ztt-Sa-Q0M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-7B-aAr">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="U9z-7B-aAr" firstAttribute="top" secondItem="WC0-g0-dBE" secondAttribute="bottom" id="jr2-2Q-7mn"/>
-                            <constraint firstAttribute="bottom" secondItem="U9z-7B-aAr" secondAttribute="bottom" id="pPt-jt-8nR"/>
-                            <constraint firstAttribute="trailing" secondItem="U9z-7B-aAr" secondAttribute="trailing" id="wg7-Ib-sAl"/>
-                            <constraint firstItem="U9z-7B-aAr" firstAttribute="leading" secondItem="ztt-Sa-Q0M" secondAttribute="leading" id="yfk-nv-hgt"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="hEk-2m-LZF"/>
                     <connections>
                         <segue destination="VB8-mu-ias" kind="show" identifier="passwsug" id="tgQ-nk-vqG"/>
+                        <segue destination="wJ0-dc-DL5" kind="show" identifier="NeedKnow" id="C7Z-hg-2rN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ht-qG-7Ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2962" y="1918"/>
         </scene>
-        <!--Table View Controller-->
+        <!--说明与反馈-->
+        <scene sceneID="x5y-iD-OeJ">
+            <objects>
+                <viewController id="wJ0-dc-DL5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gEd-Q7-lWZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oWz-gM-zA4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MPB-R5-uxU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="反馈邮箱：1160908321@qq.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob0-hw-vRX">
+                                <rect key="frame" x="56" y="512" width="263" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.APP存储信息均在本地；            2.APP可离线使用                       " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frS-qZ-Fm3">
+                                <rect key="frame" x="49" y="205" width="278" height="257"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="257" id="FO3-PQ-dWC"/>
+                                    <constraint firstAttribute="width" constant="278" id="l05-NE-RK2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="frS-qZ-Fm3" firstAttribute="centerY" secondItem="MPB-R5-uxU" secondAttribute="centerY" id="cSc-ua-ccl"/>
+                            <constraint firstItem="frS-qZ-Fm3" firstAttribute="centerX" secondItem="MPB-R5-uxU" secondAttribute="centerX" id="ljA-Zs-0wO"/>
+                            <constraint firstItem="Ob0-hw-vRX" firstAttribute="top" secondItem="frS-qZ-Fm3" secondAttribute="bottom" constant="50" id="nEs-uQ-5aa"/>
+                            <constraint firstItem="Ob0-hw-vRX" firstAttribute="centerX" secondItem="MPB-R5-uxU" secondAttribute="centerX" id="udN-A3-se6"/>
+                            <constraint firstItem="Ob0-hw-vRX" firstAttribute="leading" secondItem="MPB-R5-uxU" secondAttribute="leadingMargin" constant="40" id="yAV-SI-VmJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="说明与反馈" id="KZh-Pa-enk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86h-HB-aCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3968.8000000000002" y="2269.1154422788609"/>
+        </scene>
+        <!--密码设置-->
         <scene sceneID="5s9-yt-VbE">
             <objects>
-                <tableViewController id="VB8-mu-ias" sceneMemberID="viewController">
+                <tableViewController id="VB8-mu-ias" customClass="PassSettingTableViewController" customModule="SavePW" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="7Rf-4a-znO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +95,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手势密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-CU-ciJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="数字密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-CU-ciJ">
                                                     <rect key="frame" x="21" y="11" width="115" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="115" id="Dba-ar-zXm"/>
@@ -71,7 +104,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-an-Vhb">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RtK-an-Vhb">
                                                     <rect key="frame" x="285" y="6" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -100,7 +133,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvK-Nl-hvm">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nvK-Nl-hvm">
                                                     <rect key="frame" x="285" y="6" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -133,7 +166,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-i5-02V">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1jC-i5-02V">
                                                     <rect key="frame" x="285" y="6" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -154,10 +187,11 @@
                             <outlet property="delegate" destination="VB8-mu-ias" id="3Z2-er-STX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="密码设置" id="Sls-ay-daS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4t-VS-uqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="1918"/>
+            <point key="canvasLocation" x="3969" y="1469"/>
         </scene>
         <!--首页-->
         <scene sceneID="xCa-Fc-hgO">
