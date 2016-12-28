@@ -26,6 +26,8 @@
 		A85B0FBD1E10E00300026CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85B0FBC1E10E00300026CF3 /* Assets.xcassets */; };
 		A85B0FC01E10E00300026CF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85B0FBE1E10E00300026CF3 /* LaunchScreen.storyboard */; };
 		A85B0FC81E10EB5A00026CF3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B0FC71E10EB5A00026CF3 /* AppConstants.swift */; };
+		A8C5E4781E13F0E5005B6B3B /* FKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5E4771E13F0E5005B6B3B /* FKViewController.swift */; };
+		A8C5E47A1E13F838005B6B3B /* SZMMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5E4791E13F838005B6B3B /* SZMMTableViewController.swift */; };
 		CF5CF680CE367F4A85A18AF8 /* Pods_SavePW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766AD537CE45CDA60000D21A /* Pods_SavePW.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		A85B0FBF1E10E00300026CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A85B0FC11E10E00300026CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85B0FC71E10EB5A00026CF3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		A8C5E4771E13F0E5005B6B3B /* FKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKViewController.swift; sourceTree = "<group>"; };
+		A8C5E4791E13F838005B6B3B /* SZMMTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZMMTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 			children = (
 				A8331DC21E12A86300665E18 /* MyViewController.swift */,
 				A8331DC51E12AEB200665E18 /* PassSettingTableViewController.swift */,
+				A8C5E4771E13F0E5005B6B3B /* FKViewController.swift */,
+				A8C5E4791E13F838005B6B3B /* SZMMTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,7 +429,9 @@
 				A85B0FB81E10E00300026CF3 /* ViewController.swift in Sources */,
 				A84D430A1E12129E00BDA657 /* SPAccountModel.swift in Sources */,
 				A8331DC61E12AEB200665E18 /* PassSettingTableViewController.swift in Sources */,
+				A8C5E4781E13F0E5005B6B3B /* FKViewController.swift in Sources */,
 				A84D43061E120B5300BDA657 /* HomeVC.swift in Sources */,
+				A8C5E47A1E13F838005B6B3B /* SZMMTableViewController.swift in Sources */,
 				A84D43051E120B5300BDA657 /* SPAddVC.swift in Sources */,
 				A84D43081E120DD100BDA657 /* HMUserDefaults.swift in Sources */,
 				A85B0FC81E10EB5A00026CF3 /* AppConstants.swift in Sources */,

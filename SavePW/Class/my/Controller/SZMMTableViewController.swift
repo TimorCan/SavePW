@@ -1,32 +1,29 @@
 //
-//  PassSettingTableViewController.swift
+//  SZMMTableViewController.swift
 //  SavePW
 //
-//  Created by zhoucan on 2016/12/27.
+//  Created by zhoucan on 2016/12/28.
 //  Copyright © 2016年 verfing. All rights reserved.
 //
 
 import UIKit
+import SVProgressHUD
 
-class PassSettingTableViewController: UITableViewController {
+class SZMMTableViewController: UITableViewController {
+    
+    @IBOutlet weak var firstTF: UITextField!
+    
+    @IBOutlet weak var secondTF: UITextField!
+    
+    @IBOutlet weak var confirmButton: UIButton!
+    
+    var callBackSuccess:((_ success:Bool)->())?
 
-    
-    
-    @IBOutlet weak var numSwitch: UISwitch!
-    
-    @IBOutlet weak var figSwitch: UISwitch!
-    
-    @IBOutlet weak var closeSwitch: UISwitch!
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        firstTF.becomeFirstResponder()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,27 +35,48 @@ class PassSettingTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return super.numberOfSections(in: tableView)
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return super.tableView(tableView, numberOfRowsInSection: section)
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-
+        
+        
         return super.tableView(tableView, cellForRowAt: indexPath)
     }
- 
-
+    
+    
+    /// 存储密码
+    ///
+    /// - Parameter sender: button
+    @IBAction func cacheNumberPass(_ sender: Any) {
+        
+        
+        if firstTF.text?.characters.count == 6 &&  secondTF.text?.characters.count == 6 &&  firstTF.text == secondTF.text {
+             HMUserDefaults.saveNumber = firstTF.text!
+            callBackSuccess!(true)
+           let _ = self.navigationController?.popViewController(animated: true)
+           
+        }else{
+         
+             SVProgressHUD.showError(withStatus: "操作错误")
+        }
+        
+    }
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -94,81 +112,14 @@ class PassSettingTableViewController: UITableViewController {
     }
     */
 
-   
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if  segue.identifier == "szmm" {
-            
-            let vc = segue.destination as! SZMMTableViewController
-            vc.callBackSuccess = { [weak self] success in
-              
-                if success {
-                   self?.closeSwitch.isOn = false
-                   self?.numSwitch.isOn = success
-                }
-                
-                
-            
-            
-            }
-        }
-        
-        
     }
- 
-    
-    @IBAction func switchAction(_ sender: UISwitch) {
-        
-        switch sender.tag {
-            case 100:
-            
-            print("数字密码")
-            
-            if sender.isOn {
-                
-                //跳转设置
-                
-                self.performSegue(withIdentifier: "szmm", sender: nil)
-                
-                sender.isOn = false
-                
-            }
-            
-            HMUserDefaults.isOpenNumSwitch = sender.isOn
-            
-            
-            
-            
-            
-            case 200:
-                if sender.isOn {
-                    closeSwitch.isOn = false
-                }
-            print("指纹密码")
-            
-            HMUserDefaults.isOpenfigSwitch = sender.isOn
-            
-            case 300:
-                if sender.isOn {
-                    figSwitch.isOn = false
-                    numSwitch.isOn = false
-                }
-            print("关闭密码")
-            
-        default:
-            
-            print("error - 密码")
-        }
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    */
 
 }

@@ -11,7 +11,23 @@ import Foundation
 
 class HMUserDefaults {
     
+    class var saveNumber: String {
+        get { return getPropertyForKey(key: "saveNumber", withDefaultValue: "") }
+        set { savePropertyForKey(key: "saveNumber", withValue: newValue as AnyObject?) }
+    }
     
+    
+    /// 是否开启数字密码
+    class var isOpenNumSwitch: Bool {
+        get { return getPropertyForKey(key: "isOpenNumSwitch", withDefaultValue: false) }
+        set { savePropertyForKey(key: "isOpenNumSwitch", withValue: newValue as AnyObject?) }
+    }
+    
+    /// 是否开启指纹密码
+    class var isOpenfigSwitch: Bool {
+        get { return getPropertyForKey(key: "isOpenfigSwitch", withDefaultValue: false) }
+        set { savePropertyForKey(key: "isOpenfigSwitch", withValue: newValue as AnyObject?) }
+    }
     
     
     

@@ -27,3 +27,9 @@ struct UIConstant {
     // tab高度
     static let UI_TAB_HEIGHT : CGFloat = 49
 }
+
+
+enum SPWNotificationName:String{
+    case NeedPass = "NeedPass" //需要密码
+    case GoHome = "GoHome" //直接首页
+}
