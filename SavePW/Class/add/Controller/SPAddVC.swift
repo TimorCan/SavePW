@@ -60,6 +60,12 @@ class SPAddCameraVC: FormViewController {
             self.navigationItem.prompt = nil //就第一次显示提示
         }
         
+        if model == nil{
+            //初始化
+            model = SPAccountModel()
+        }
+
+        
         form +++ Section("昵称+图片")
             
             
@@ -67,30 +73,59 @@ class SPAddCameraVC: FormViewController {
                 $0.title = "昵称"
                 $0.placeholder = "取个名字吧，如qq"
                 $0.disabled = self.isDisable
+                if self.isDisableBool {
+                    
+                    $0.value = model?.nickName
+                    
+                }
                 
-        }
+                }.onChange({[weak self] (cell) in
+                    self?.model?.nickName = cell.value!
+                })
+            
             
             <<< TextAreaRow() {
                 $0.placeholder = "备注信息"
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 80)
                 $0.disabled = self.isDisable
-            }
+                if self.isDisableBool {
+                    
+                    $0.value = model?.remarks
+                    
+                }
+                }.onChange({[weak self] (cell) in
+                    self?.model?.remarks = cell.value!
+                })
+            
             
             
 
             <<< DateRow(){
                 $0.title = "最后编辑日期"
+                if self.isDisableBool {
+                    
+                    $0.value = model?.lastDate
+                    
+                }else{
+                    $0.value = Date()
+                    self.model?.lastDate = Date()
+                }
+
                 $0.value = Date()
                 let formatter = DateFormatter()
                 formatter.locale = .current
                 formatter.dateStyle = .short
                 $0.dateFormatter = formatter
                 $0.disabled = self.isDisable
-        }
+                }.onChange({[weak self] (cell) in
+                    
+                    self?.model?.lastDate = cell.value
+                })
         
             +++ Section()
             <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "添加照片"
+                
                
                 }
                 .onCellSelection { [weak self] (cell, row) in
@@ -108,20 +143,22 @@ class SPAddCameraVC: FormViewController {
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
         
         
-        if model?.account != nil  && (model?.account.characters.count)! > 0 {
+        if model?.nickName != nil  && (model?.nickName.characters.count)! > 0 {
             
-            if model?.nickName.isEmpty == true {
-                model?.nickName = (model?.account)!
+            if model?.account.isEmpty == true {
+                model?.account = (model?.nickName)!
             }
             
         }else{
             
-            SVProgressHUD.showError(withStatus: "账号不能为空")
+            SVProgressHUD.showError(withStatus: "昵称不能为空")
             return
         }
         
         
         try! realm.write {
+            
+            model?.accoutType = 2
             realm.add(model!)
         }
         
@@ -169,6 +206,11 @@ class SPAddYHKVC: FormViewController {
             self.navigationItem.prompt = nil
         }
 
+        if model == nil{
+            //初始化
+            model = SPAccountModel()
+        }
+
             form +++ Section("银行卡+密码")
             
                 
@@ -176,36 +218,85 @@ class SPAddYHKVC: FormViewController {
                 $0.title = "昵称"
                 $0.placeholder = "取个名字吧，如我的农行卡"
                 $0.disabled = self.isDisable
-            }
+                if self.isDisableBool {
+                    
+                    $0.value = model?.nickName
+                    
+                }
+                }.onChange({[weak self] (cell) in
+                    self?.model?.nickName = cell.value!
+                })
                 
             <<< TextRow() {
             $0.title = "账号"
             $0.placeholder = "请输入账号"
             $0.disabled = self.isDisable
-            }
+                if self.isDisableBool {
+                    
+                    $0.value = model?.account
+                    
+                }
+                
+                }.onChange({[weak self] (cell) in
+                    self?.model?.account = cell.value!
+                }).cellSetup { cell, _  in
+                    cell.textField.keyboardType = .numberPad
+                }
             
             <<< TextRow() {
             $0.title = "取款密码"
             $0.placeholder = "请输入取款密码"
             $0.disabled = self.isDisable
-            }
-        
+                if self.isDisableBool {
+                    
+                    $0.value = model?.payPass
+                    
+                }
+                
+                }.onChange({[weak self] (cell) in
+                    self?.model?.payPass = cell.value!
+                }).cellSetup { cell, _  in
+                    cell.textField.keyboardType = .numberPad
+                }
            <<< TextRow() {
             $0.title = "查询密码"
             $0.placeholder = "请输入查询密码"
             $0.disabled = self.isDisable
+            if self.isDisableBool {
+                
+                $0.value = model?.otherPass
+                
             }
-    
+            
+            }.onChange({[weak self] (cell) in
+                self?.model?.otherPass = cell.value!
+            })
                 +++ Section("备注")
                 
                 <<< TextAreaRow() {
                     $0.placeholder = "备注信息"
                     $0.textAreaHeight = .dynamic(initialTextViewHeight: 80)
                     $0.disabled = self.isDisable
-                }
+                    if self.isDisableBool {
+                        
+                        $0.value = model?.remarks
+                        
+                    }
+                    
+                    }.onChange({[weak self] (cell) in
+                        self?.model?.remarks = cell.value!
+                    })
                 
                 <<< DateRow(){
                     $0.title = "最后编辑日期"
+                    if self.isDisableBool {
+                        
+                        $0.value = model?.lastDate
+                        
+                    }else{
+                        $0.value = Date()
+                        self.model?.lastDate = Date()
+                    }
                     $0.value = Date()
                     let formatter = DateFormatter()
                     formatter.locale = .current
@@ -214,7 +305,11 @@ class SPAddYHKVC: FormViewController {
                     $0.disabled = self.isDisable
                     
                     
-        }
+                    }.onChange({[weak self] (cell) in
+                        
+                        self?.model?.lastDate = cell.value
+                    })
+
 
     
 }
@@ -240,6 +335,7 @@ class SPAddYHKVC: FormViewController {
         
         
         try! realm.write {
+            model?.accoutType = 1
             realm.add(model!)
         }
         
@@ -488,6 +584,7 @@ class SPAddVC: FormViewController {
         
         
         try! realm.write {
+            model?.accoutType = 0
             realm.add(model!)
         }
         
