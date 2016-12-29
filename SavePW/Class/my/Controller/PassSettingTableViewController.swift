@@ -19,13 +19,18 @@ class PassSettingTableViewController: UITableViewController {
     @IBOutlet weak var closeSwitch: UISwitch!
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        numSwitch.isOn = HMUserDefaults.isOpenNumSwitch
+        figSwitch.isOn = HMUserDefaults.isOpenfigSwitch
+        
+        if HMUserDefaults.isOpenNumSwitch == false && HMUserDefaults.isOpenfigSwitch == false {
+            closeSwitch.isOn = false
+        }
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -110,6 +115,7 @@ class PassSettingTableViewController: UITableViewController {
                 if success {
                    self?.closeSwitch.isOn = false
                    self?.numSwitch.isOn = success
+                    HMUserDefaults.isOpenNumSwitch = success
                 }
                 
                 
@@ -133,14 +139,11 @@ class PassSettingTableViewController: UITableViewController {
                 
                 //跳转设置
                 
-                self.performSegue(withIdentifier: "szmm", sender: nil)
                 
                 sender.isOn = false
-                
+                HMUserDefaults.isOpenNumSwitch = sender.isOn
+                self.performSegue(withIdentifier: "szmm", sender: nil)
             }
-            
-            HMUserDefaults.isOpenNumSwitch = sender.isOn
-            
             
             
             

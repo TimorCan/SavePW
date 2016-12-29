@@ -11,6 +11,14 @@ import Foundation
 
 class HMUserDefaults {
     
+    /// 是否开启touchID密码
+    class var isEnableTouchID: Bool {
+        get { return getPropertyForKey(key: "isEnableTouchID", withDefaultValue: true) }
+        set { savePropertyForKey(key: "isEnableTouchID", withValue: newValue as AnyObject?) }
+    }
+    
+    
+    
     class var saveNumber: String {
         get { return getPropertyForKey(key: "saveNumber", withDefaultValue: "") }
         set { savePropertyForKey(key: "saveNumber", withValue: newValue as AnyObject?) }

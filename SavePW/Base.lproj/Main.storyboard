@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uiq-72-qEs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qja-hr-Oje">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -299,7 +299,7 @@
                 </toolbar>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtc-f1-9QM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3052" y="723"/>
+            <point key="canvasLocation" x="3991.1999999999998" y="722.78860569715152"/>
         </scene>
         <!--编辑-->
         <scene sceneID="nj9-gg-0Bs">
@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7L9-LA-4Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="-912"/>
+            <point key="canvasLocation" x="5702" y="-901"/>
         </scene>
         <!--数字密码-->
         <scene sceneID="WB8-0K-nx5">
@@ -443,31 +443,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hup-dP-RsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5665" y="1469"/>
+            <point key="canvasLocation" x="5703" y="1257"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="cYh-5s-7PO">
+        <!--解锁🔓-->
+        <scene sceneID="2Xh-0m-BOo">
             <objects>
-                <viewController id="m4M-z1-d9s" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UNLockViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZbK-Gj-dAi" customClass="UNLockViewController" customModule="SavePW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tNP-Vs-uek"/>
-                        <viewControllerLayoutGuide type="bottom" id="FZL-Ww-GsD"/>
+                        <viewControllerLayoutGuide type="top" id="PMR-qT-Yya"/>
+                        <viewControllerLayoutGuide type="bottom" id="cte-59-K6e"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ska-hl-gLf">
+                    <view key="view" contentMode="scaleToFill" id="DYl-SZ-obx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c9N-Xh-wiu"/>
+                    <navigationItem key="navigationItem" title="解锁🔓" id="Wih-Yl-a1A"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eoT-X3-lXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myX-rw-Trq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3052" y="-45"/>
+            <point key="canvasLocation" x="460" y="180"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tabbar View Controller-->
         <scene sceneID="QiU-Kp-x21">
             <objects>
-                <tabBarController id="uiq-72-qEs" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="SPTabbarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uiq-72-qEs" customClass="SPTabbarViewController" customModule="SavePW" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6pX-OX-9BK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -476,12 +476,13 @@
                     <connections>
                         <segue destination="mlP-5P-x7j" kind="relationship" relationship="viewControllers" id="HMl-ht-OlZ"/>
                         <segue destination="dph-cJ-YdO" kind="relationship" relationship="viewControllers" id="9KA-aV-fRq"/>
-                        <segue destination="de1-Bs-yhx" kind="show" identifier="GestrueVC" id="RRV-Rh-yd5"/>
+                        <segue destination="ZbK-Gj-dAi" kind="show" id="ucr-Ke-i9h"/>
+                        <segue destination="qja-hr-Oje" kind="show" id="8DB-Im-qds"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYZ-qk-qYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460" y="745"/>
+            <point key="canvasLocation" x="460" y="884"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bgg-Qd-5oi">
@@ -500,7 +501,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n7h-oR-Bat" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2230" y="643"/>
+            <point key="canvasLocation" x="3168.8000000000002" y="642.72863568215894"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hqx-bC-aou">
@@ -520,24 +521,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fs-gD-Qcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023" y="1919"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rQ1-ud-s7c">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" id="de1-Bs-yhx" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LLY-ju-oHP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="m4M-z1-d9s" kind="relationship" relationship="rootViewController" id="Hg9-yL-cjs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="amW-S2-aiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2230" y="-45"/>
         </scene>
         <!--保存照片到APP-->
         <scene sceneID="HYP-P4-E1g">
@@ -567,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qie-75-17L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="482"/>
+            <point key="canvasLocation" x="5703.1999999999998" y="481.70914542728639"/>
         </scene>
         <!--编辑-->
         <scene sceneID="fVz-e5-Jmr">
@@ -597,7 +580,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZx-cy-LE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4764" y="-196"/>
+            <point key="canvasLocation" x="5703.1999999999998" y="-196.55172413793105"/>
+        </scene>
+        <!--解锁中...-->
+        <scene sceneID="8kz-sp-4dl">
+            <objects>
+                <viewController storyboardIdentifier="LockFaildViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m5I-CQ-hn3" customClass="LockFaildViewController" customModule="SavePW" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uAv-rN-GvQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfS-vC-KGO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YEs-FV-5MQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PASSCODE" translatesAutoresizingMaskIntoConstraints="NO" id="vOT-NT-Qgi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vOT-NT-Qgi" secondAttribute="trailing" id="0lr-a6-SSj"/>
+                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="bottom" secondItem="hfS-vC-KGO" secondAttribute="top" id="LxC-GZ-rCs"/>
+                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="top" secondItem="YEs-FV-5MQ" secondAttribute="top" id="idX-i8-dJT"/>
+                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="leading" secondItem="YEs-FV-5MQ" secondAttribute="leading" id="yyY-Hv-rVI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="解锁中..." id="lNF-t6-ehF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBv-CM-UxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="2412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZBq-ml-Yph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qja-hr-Oje" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UAW-4a-9bO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="m5I-CQ-hn3" kind="relationship" relationship="rootViewController" id="rEe-1I-ztf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1W-JD-Dka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="1680"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PASSCODE" width="640" height="1136"/>
+    </resources>
 </document>

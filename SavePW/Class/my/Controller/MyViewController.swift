@@ -12,10 +12,7 @@ import Eureka
 class MyViewController: FormViewController {
 
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-         self.tabBarController?.tabBar.isHidden = false
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +54,16 @@ class MyViewController: FormViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "passwsug" {
+            let vc = segue.destination as! PassSettingTableViewController
+            vc.hidesBottomBarWhenPushed = true
+        }else if segue.identifier == "NeedKnow"{
+        
+             let vc = segue.destination as! FKViewController
+            vc.hidesBottomBarWhenPushed = true
+        }
+        
         
         
     }

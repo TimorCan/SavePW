@@ -1,16 +1,15 @@
 //
-//  FKViewController.swift
+//  SPTabbarViewController.swift
 //  SavePW
 //
-//  Created by zhoucan on 2016/12/28.
+//  Created by zhoucan on 2016/12/29.
 //  Copyright © 2016年 verfing. All rights reserved.
 //
 
 import UIKit
 
-class FKViewController: UIViewController {
+class SPTabbarViewController: UITabBarController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

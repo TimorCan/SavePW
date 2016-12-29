@@ -32,4 +32,5 @@ struct UIConstant {
 enum SPWNotificationName:String{
     case NeedPass = "NeedPass" //需要密码
     case GoHome = "GoHome" //直接首页
+    case GoNumber = "GoNumber" //直接首页
 }

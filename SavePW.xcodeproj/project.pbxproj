@@ -28,6 +28,9 @@
 		A85B0FC81E10EB5A00026CF3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B0FC71E10EB5A00026CF3 /* AppConstants.swift */; };
 		A8C5E4781E13F0E5005B6B3B /* FKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5E4771E13F0E5005B6B3B /* FKViewController.swift */; };
 		A8C5E47A1E13F838005B6B3B /* SZMMTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5E4791E13F838005B6B3B /* SZMMTableViewController.swift */; };
+		A8C8373F1E14C5E4009B7431 /* UNLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8373E1E14C5E4009B7431 /* UNLockViewController.swift */; };
+		A8C837441E14C9CD009B7431 /* SPTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C837431E14C9CD009B7431 /* SPTabbarViewController.swift */; };
+		A8C837461E14D4DE009B7431 /* LockFaildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C837451E14D4DE009B7431 /* LockFaildViewController.swift */; };
 		CF5CF680CE367F4A85A18AF8 /* Pods_SavePW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766AD537CE45CDA60000D21A /* Pods_SavePW.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +72,9 @@
 		A85B0FC71E10EB5A00026CF3 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		A8C5E4771E13F0E5005B6B3B /* FKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FKViewController.swift; sourceTree = "<group>"; };
 		A8C5E4791E13F838005B6B3B /* SZMMTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SZMMTableViewController.swift; sourceTree = "<group>"; };
+		A8C8373E1E14C5E4009B7431 /* UNLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNLockViewController.swift; sourceTree = "<group>"; };
+		A8C837431E14C9CD009B7431 /* SPTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTabbarViewController.swift; sourceTree = "<group>"; };
+		A8C837451E14D4DE009B7431 /* LockFaildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockFaildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 		A84D42F61E120B5300BDA657 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A8C8373A1E14C5B5009B7431 /* unLock */,
 				A8331DBE1E12A84800665E18 /* my */,
 				A84D42F71E120B5300BDA657 /* add */,
 				A84D42FC1E120B5300BDA657 /* home */,
@@ -280,6 +287,7 @@
 				A80A53041E1167AB00CD3AEC /* ThirdPart */,
 				A85B0FB51E10E00300026CF3 /* AppDelegate.swift */,
 				A85B0FC71E10EB5A00026CF3 /* AppConstants.swift */,
+				A8C837431E14C9CD009B7431 /* SPTabbarViewController.swift */,
 				A84D43071E120DD100BDA657 /* HMUserDefaults.swift */,
 				A84D42F61E120B5300BDA657 /* Class */,
 				A85B0FB71E10E00300026CF3 /* ViewController.swift */,
@@ -289,6 +297,39 @@
 				A85B0FC11E10E00300026CF3 /* Info.plist */,
 			);
 			path = SavePW;
+			sourceTree = "<group>";
+		};
+		A8C8373A1E14C5B5009B7431 /* unLock */ = {
+			isa = PBXGroup;
+			children = (
+				A8C8373B1E14C5B5009B7431 /* Controller */,
+				A8C8373C1E14C5B5009B7431 /* Model */,
+				A8C8373D1E14C5B5009B7431 /* View */,
+			);
+			path = unLock;
+			sourceTree = "<group>";
+		};
+		A8C8373B1E14C5B5009B7431 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8C8373E1E14C5E4009B7431 /* UNLockViewController.swift */,
+				A8C837451E14D4DE009B7431 /* LockFaildViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8C8373C1E14C5B5009B7431 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8C8373D1E14C5B5009B7431 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FB1943896D50E03BE67AB25D /* Pods */ = {
@@ -426,13 +467,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C837461E14D4DE009B7431 /* LockFaildViewController.swift in Sources */,
 				A85B0FB81E10E00300026CF3 /* ViewController.swift in Sources */,
 				A84D430A1E12129E00BDA657 /* SPAccountModel.swift in Sources */,
 				A8331DC61E12AEB200665E18 /* PassSettingTableViewController.swift in Sources */,
 				A8C5E4781E13F0E5005B6B3B /* FKViewController.swift in Sources */,
+				A8C8373F1E14C5E4009B7431 /* UNLockViewController.swift in Sources */,
 				A84D43061E120B5300BDA657 /* HomeVC.swift in Sources */,
 				A8C5E47A1E13F838005B6B3B /* SZMMTableViewController.swift in Sources */,
 				A84D43051E120B5300BDA657 /* SPAddVC.swift in Sources */,
+				A8C837441E14C9CD009B7431 /* SPTabbarViewController.swift in Sources */,
 				A84D43081E120DD100BDA657 /* HMUserDefaults.swift in Sources */,
 				A85B0FC81E10EB5A00026CF3 /* AppConstants.swift in Sources */,
 				A8331DC31E12A86300665E18 /* MyViewController.swift in Sources */,
