@@ -31,6 +31,7 @@
 		A8C8373F1E14C5E4009B7431 /* UNLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C8373E1E14C5E4009B7431 /* UNLockViewController.swift */; };
 		A8C837441E14C9CD009B7431 /* SPTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C837431E14C9CD009B7431 /* SPTabbarViewController.swift */; };
 		A8C837461E14D4DE009B7431 /* LockFaildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C837451E14D4DE009B7431 /* LockFaildViewController.swift */; };
+		A8C8374C1E150D90009B7431 /* 安全.png in Resources */ = {isa = PBXBuildFile; fileRef = A8C8374B1E150D90009B7431 /* 安全.png */; };
 		CF5CF680CE367F4A85A18AF8 /* Pods_SavePW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 766AD537CE45CDA60000D21A /* Pods_SavePW.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		A8C8373E1E14C5E4009B7431 /* UNLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UNLockViewController.swift; sourceTree = "<group>"; };
 		A8C837431E14C9CD009B7431 /* SPTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPTabbarViewController.swift; sourceTree = "<group>"; };
 		A8C837451E14D4DE009B7431 /* LockFaildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockFaildViewController.swift; sourceTree = "<group>"; };
+		A8C8374B1E150D90009B7431 /* 安全.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "安全.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 				A84D42F61E120B5300BDA657 /* Class */,
 				A85B0FB71E10E00300026CF3 /* ViewController.swift */,
 				A85B0FB91E10E00300026CF3 /* Main.storyboard */,
+				A8C8374B1E150D90009B7431 /* 安全.png */,
 				A85B0FBC1E10E00300026CF3 /* Assets.xcassets */,
 				A85B0FBE1E10E00300026CF3 /* LaunchScreen.storyboard */,
 				A85B0FC11E10E00300026CF3 /* Info.plist */,
@@ -408,6 +411,7 @@
 				A85B0FC01E10E00300026CF3 /* LaunchScreen.storyboard in Resources */,
 				A85B0FBD1E10E00300026CF3 /* Assets.xcassets in Resources */,
 				A85B0FBB1E10E00300026CF3 /* Main.storyboard in Resources */,
+				A8C8374C1E150D90009B7431 /* 安全.png in Resources */,
 				A81158CD1E116E3100C55823 /* Realm添加方法 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

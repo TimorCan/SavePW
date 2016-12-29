@@ -593,18 +593,7 @@
                     <view key="view" contentMode="scaleToFill" id="YEs-FV-5MQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PASSCODE" translatesAutoresizingMaskIntoConstraints="NO" id="vOT-NT-Qgi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vOT-NT-Qgi" secondAttribute="trailing" id="0lr-a6-SSj"/>
-                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="bottom" secondItem="hfS-vC-KGO" secondAttribute="top" id="LxC-GZ-rCs"/>
-                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="top" secondItem="YEs-FV-5MQ" secondAttribute="top" id="idX-i8-dJT"/>
-                            <constraint firstItem="vOT-NT-Qgi" firstAttribute="leading" secondItem="YEs-FV-5MQ" secondAttribute="leading" id="yyY-Hv-rVI"/>
-                        </constraints>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="解锁中..." id="lNF-t6-ehF"/>
                 </viewController>
@@ -631,7 +620,4 @@
             <point key="canvasLocation" x="460" y="1680"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="PASSCODE" width="640" height="1136"/>
-    </resources>
 </document>

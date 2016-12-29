@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,35 +22,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PASSCODE" translatesAutoresizingMaskIntoConstraints="NO" id="1wD-uN-Kbd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lock your everything" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbk-Hg-Jrp">
-                                <rect key="frame" x="59.5" y="305.5" width="257.5" height="57.5"/>
+                                <rect key="frame" x="59" y="305" width="258" height="58"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="48"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="made by verfing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnD-0M-UMK">
-                                <rect key="frame" x="27" y="568" width="320" height="32.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright@verfing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZu-or-xwp">
+                                <rect key="frame" x="107" y="626" width="161" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="J04-3U-WEo"/>
+                                    <constraint firstAttribute="height" constant="21" id="5jY-kS-NkP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号管家" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ik8-XE-huC">
+                                <rect key="frame" x="155" y="604" width="65" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="fey-F7-zka"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="安全.png" translatesAutoresizingMaskIntoConstraints="NO" id="pNV-yN-gcA">
+                                <rect key="frame" x="125" y="606" width="41" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="4xa-Pa-BsH"/>
+                                    <constraint firstAttribute="height" constant="17" id="cQE-Fb-dMP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Jbk-Hg-Jrp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="13F-Xx-JeB"/>
-                            <constraint firstItem="1wD-uN-Kbd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="38f-qT-gZp"/>
-                            <constraint firstItem="Jbk-Hg-Jrp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="BT9-HZ-9qg"/>
-                            <constraint firstItem="NnD-0M-UMK" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="250.75" id="GaF-aa-c5O"/>
-                            <constraint firstItem="NnD-0M-UMK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZKj-RG-UD2"/>
-                            <constraint firstAttribute="trailing" secondItem="1wD-uN-Kbd" secondAttribute="trailing" id="d2P-zh-2ag"/>
-                            <constraint firstItem="1wD-uN-Kbd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fXe-UT-0ns"/>
-                            <constraint firstItem="1wD-uN-Kbd" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="hja-fX-Uyl"/>
+                            <constraint firstAttribute="bottom" secondItem="zZu-or-xwp" secondAttribute="bottom" constant="20" symbolic="YES" id="4p6-N8-fGr"/>
+                            <constraint firstItem="pNV-yN-gcA" firstAttribute="centerY" secondItem="Ik8-XE-huC" secondAttribute="centerY" id="96o-bC-vj5"/>
+                            <constraint firstItem="Ik8-XE-huC" firstAttribute="centerX" secondItem="zZu-or-xwp" secondAttribute="centerX" id="O41-Kl-hVx"/>
+                            <constraint firstItem="Jbk-Hg-Jrp" firstAttribute="centerX" secondItem="Ik8-XE-huC" secondAttribute="centerX" id="UrA-Hb-qzx"/>
+                            <constraint firstItem="zZu-or-xwp" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="91" id="VZ7-Cy-oX5"/>
+                            <constraint firstItem="Jbk-Hg-Jrp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="f0c-Di-68u"/>
+                            <constraint firstItem="Jbk-Hg-Jrp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kkJ-m6-aiQ"/>
+                            <constraint firstItem="zZu-or-xwp" firstAttribute="top" secondItem="Ik8-XE-huC" secondAttribute="bottom" constant="1" id="oOG-Sd-PRu"/>
+                            <constraint firstItem="pNV-yN-gcA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="125" id="yf5-AG-Hw2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -59,6 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PASSCODE" width="640" height="1136"/>
+        <image name="安全.png" width="200" height="200"/>
     </resources>
 </document>

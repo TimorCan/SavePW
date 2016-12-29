@@ -61,7 +61,7 @@ class LockFaildViewController: UIViewController {
         
         DispatchQueue.main.async {
             let label = UILabel.init()
-            label.textColor = UIColor.white
+            label.textColor = UIColor.orange
             label.font = UIFont.systemFont(ofSize: 20)
             label.textAlignment = .center
             label.text = "解锁失败！请稍后再试"
