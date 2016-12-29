@@ -132,12 +132,62 @@ class SPAddCameraVC: FormViewController {
                
                 }
                 .onCellSelection { [weak self] (cell, row) in
-                    print("hello")
+                    self?.getAuth()
         }
 
         
         
     }
+    
+    
+    func getAuth()  {
+        
+        
+        let alertController = UIAlertController.init(title: "存储相片", message: "", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction.init(title: "取消", style: .cancel) { (_) in
+            
+        }
+        
+        let confirmAction = UIAlertAction.init(title: "拍照", style: .default) { [weak self](_) in
+             self?.AddPhotoClick(sourceType: .camera)
+            
+        }
+        let confirmAction1 = UIAlertAction.init(title: "相册", style: .default) {[weak self] (_) in
+           self?.AddPhotoClick(sourceType: .photoLibrary)
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+         alertController.addAction(confirmAction1)
+        present(alertController, animated: true, completion: nil)
+        
+        
+        
+        
+        
+    }
+    
+    
+    //FIXME: 点击添加图片按钮
+    fileprivate func AddPhotoClick(sourceType:UIImagePickerControllerSourceType){
+        //1.判断照片控制器是否可用 ,不可用返回
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            return
+        }
+        //2.创建照片控制器
+        let picVc = UIImagePickerController()
+        //3.设置控制器类型
+        picVc.sourceType = sourceType
+        //4.设置是否可以管理已经存在的图片或者视频
+        picVc.allowsEditing = true
+        //5.设置代理
+        picVc.delegate = self
+        //6.弹出控制器
+        present(picVc, animated: true, completion: nil)
+    }
+    
     
     @IBAction func actionAction(_ sender: UIBarButtonItem) {
     }
@@ -169,6 +219,15 @@ class SPAddCameraVC: FormViewController {
         let _ =  self.navigationController?.popViewController(animated: true)
     }
 
+}
+
+
+extension SPAddCameraVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //这里获取xiang
+        
+    }
 }
 
 class SPAddYHKVC: FormViewController {
