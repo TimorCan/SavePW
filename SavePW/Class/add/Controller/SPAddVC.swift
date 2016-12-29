@@ -74,13 +74,15 @@ class SPAddCameraVC: FormViewController {
                 $0.placeholder = "取个名字吧，如qq"
                 $0.disabled = self.isDisable
                 if self.isDisableBool {
-                    
                     $0.value = model?.nickName
                     
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.nickName = cell.value!
+                    
+                    guard let value = cell.value else {return}
+                    
+                    self?.model?.nickName = value
                 })
             
             
@@ -94,7 +96,8 @@ class SPAddCameraVC: FormViewController {
                     
                 }
                 }.onChange({[weak self] (cell) in
-                    self?.model?.remarks = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.remarks = value
                 })
             
             
@@ -118,8 +121,8 @@ class SPAddCameraVC: FormViewController {
                 $0.dateFormatter = formatter
                 $0.disabled = self.isDisable
                 }.onChange({[weak self] (cell) in
-                    
-                    self?.model?.lastDate = cell.value
+                     guard let value = cell.value else {return}
+                    self?.model?.lastDate = value
                 })
         
             +++ Section()
@@ -224,7 +227,8 @@ class SPAddYHKVC: FormViewController {
                     
                 }
                 }.onChange({[weak self] (cell) in
-                    self?.model?.nickName = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.nickName = value
                 })
                 
             <<< TextRow() {
@@ -238,7 +242,8 @@ class SPAddYHKVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.account = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.account = value
                 }).cellSetup { cell, _  in
                     cell.textField.keyboardType = .numberPad
                 }
@@ -254,7 +259,8 @@ class SPAddYHKVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.payPass = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.payPass = value
                 }).cellSetup { cell, _  in
                     cell.textField.keyboardType = .numberPad
                 }
@@ -269,7 +275,8 @@ class SPAddYHKVC: FormViewController {
             }
             
             }.onChange({[weak self] (cell) in
-                self?.model?.otherPass = cell.value!
+                 guard let value = cell.value else {return}
+                self?.model?.otherPass = value
             })
                 +++ Section("备注")
                 
@@ -284,7 +291,8 @@ class SPAddYHKVC: FormViewController {
                     }
                     
                     }.onChange({[weak self] (cell) in
-                        self?.model?.remarks = cell.value!
+                         guard let value = cell.value else {return}
+                        self?.model?.remarks = value
                     })
                 
                 <<< DateRow(){
@@ -306,8 +314,8 @@ class SPAddYHKVC: FormViewController {
                     
                     
                     }.onChange({[weak self] (cell) in
-                        
-                        self?.model?.lastDate = cell.value
+                         guard let value = cell.value else {return}
+                        self?.model?.lastDate = value
                     })
 
 
@@ -410,7 +418,8 @@ class SPAddVC: FormViewController {
                 
                 
             }.onChange({[weak self] (cell) in
-                self?.model?.nickName = cell.value!
+                 guard let value = cell.value else {return}
+                self?.model?.nickName = value
             })
             
             <<< TextRow() {
@@ -425,7 +434,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.account = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.account = value
                 })
             
             <<< TextRow() {
@@ -440,7 +450,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.pass = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.pass = value
                 })
             
           
@@ -458,7 +469,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.phone = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.phone = value
                 })
            
             <<< EmailRow() {
@@ -473,7 +485,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.mail = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.mail = value
                 })
             
              +++ Section("密保问题")
@@ -489,7 +502,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.queA1 = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.queA1 = value
                 })
             <<< TextRow() {
                 $0.placeholder = "问题2 + 答案"
@@ -502,7 +516,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.queA2 = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.queA2 = value
                 })
             <<< TextRow() {
                 $0.placeholder = "问题3 + 答案"
@@ -515,7 +530,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.queA3 = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.queA3 = value
                 })
         
             
@@ -534,7 +550,8 @@ class SPAddVC: FormViewController {
                 }
                 
                 }.onChange({[weak self] (cell) in
-                    self?.model?.remarks = cell.value!
+                     guard let value = cell.value else {return}
+                    self?.model?.remarks = value
                 })
         
             <<< DateRow(){
@@ -555,8 +572,8 @@ class SPAddVC: FormViewController {
                 $0.dateFormatter = formatter
                 $0.disabled = self.isDisable
                 }.onChange({[weak self] (cell) in
-                    
-                    self?.model?.lastDate = cell.value
+                     guard let value = cell.value else {return}
+                    self?.model?.lastDate = value
                 })
         
         

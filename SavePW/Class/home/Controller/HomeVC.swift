@@ -357,15 +357,18 @@ extension HomeVC:UITableViewDataSource,UITableViewDelegate{
         if dataSources.count == 0 {
             
            self.view.insertSubview(noDataLabel, aboveSubview: self.tableView)
-            noDataLabel.center = self.tableView.center
+           
+          
         }else{
         
          self.view.insertSubview(noDataLabel, belowSubview: self.tableView)
-            noDataLabel.center = self.tableView.center
 
         }
         
-        
+        noDataLabel.snp.makeConstraints({ (make) in
+            make.size.equalTo(noDataLabel)
+            make.center.equalTo(self.tableView)
+        })
         
         
         return dataSources.count

@@ -147,7 +147,6 @@ class PassSettingTableViewController: UITableViewController {
             
             
             
-            
             case 200:
                 if sender.isOn {
                     closeSwitch.isOn = false
@@ -158,8 +157,14 @@ class PassSettingTableViewController: UITableViewController {
             
             case 300:
                 if sender.isOn {
+                    
                     figSwitch.isOn = false
                     numSwitch.isOn = false
+                    
+                    HMUserDefaults.isOpenfigSwitch = false
+                    HMUserDefaults.isOpenNumSwitch = false
+                    HMUserDefaults.saveNumber = ""
+                    
                 }
             print("关闭密码")
             
