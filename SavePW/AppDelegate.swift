@@ -14,7 +14,11 @@ import LocalAuthentication
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    var isFirstOpen:Bool = false
+    
+    var showPassView:Bool = false
+    
     deinit {
          NotificationCenter.default.removeObserver(self)
     }
@@ -23,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         print(NSHomeDirectory()) //打印地址
-        
+        isFirstOpen = true
     
         NotificationCenter.default.addObserver(self, selector: #selector(goHome), name: NSNotification.Name(rawValue: SPWNotificationName.GoHome.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(goLockNumber), name: NSNotification.Name(rawValue: SPWNotificationName.GoNumber.rawValue), object: nil)
@@ -58,11 +62,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func applicationWillResignActive(_ application: UIApplication) {
+        
+//        
+//        if  !isFirstOpen {
+//            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LockFaildViewController") as! LockFaildViewController
+//            vc.isBecomeActive = true
+//            let nav = UINavigationController.init(rootViewController: vc)
+//            self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+//            
+//        }
+//        
+//        isFirstOpen = false
+        
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        
+       
+            
+        showPassView = true
+        
+        isFirstOpen = false
+        
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -72,6 +95,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        
+        if showPassView {
+            
+            
+            if HMUserDefaults.isOpenfail {
+                
+                if HMUserDefaults.isOpenNumSwitch == true {
+                    
+                    let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UNLockViewController") as! UNLockViewController
+                    vc.isBecomeActive = true
+                    let nav = UINavigationController.init(rootViewController: vc)
+                    self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                    
+                }
+                
+                HMUserDefaults.isOpenfail = false
+                
+                return
+            }
+            
+            
+            if HMUserDefaults.isOpenfigSwitch == true {
+             
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LockFaildViewController") as! LockFaildViewController
+            vc.isBecomeActive = true
+            let nav = UINavigationController.init(rootViewController: vc)
+            self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                return
+            }
+            
+            
+            
+            if HMUserDefaults.isOpenNumSwitch == true {
+                
+                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UNLockViewController") as! UNLockViewController
+                vc.isBecomeActive = true
+                let nav = UINavigationController.init(rootViewController: vc)
+                self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                
+            }
+            
+            
+            
+            
+        }
+        
+      
+        showPassView = false
+        
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

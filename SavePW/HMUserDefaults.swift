@@ -38,6 +38,14 @@ class HMUserDefaults {
     }
     
     
+    /// 是否开启指纹密码
+    class var isOpenfail: Bool {
+        get { return getPropertyForKey(key: "isOpenfail", withDefaultValue: false) }
+        set { savePropertyForKey(key: "isOpenfail", withValue: newValue as AnyObject?) }
+    }
+    
+
+    
     
     /// 是否第一次登陆SPADDVC
     class var isFirstGoSPAddVC: Bool {

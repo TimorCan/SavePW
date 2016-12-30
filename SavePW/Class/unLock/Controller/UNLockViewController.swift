@@ -11,6 +11,7 @@ import Eureka
 
 class UNLockViewController: FormViewController {
 
+    var isBecomeActive:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +36,14 @@ class UNLockViewController: FormViewController {
             
             if HMUserDefaults.saveNumber == saveNumber{
              
+                if self.isBecomeActive {
+                
+                   self.dismiss(animated: true, completion: nil)
+                
+                }
+                
+                
+                
                 self.view.endEditing(true)
                 DispatchQueue.main.async {
                     

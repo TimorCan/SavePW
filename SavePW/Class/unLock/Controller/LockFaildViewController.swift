@@ -13,12 +13,17 @@ import SnapKit
 class LockFaildViewController: UIViewController {
 
     
+    var isBecomeActive:Bool = false
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         if HMUserDefaults.isOpenfigSwitch == false && HMUserDefaults.isOpenNumSwitch == false {
             
@@ -98,6 +103,22 @@ class LockFaildViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         
+                        
+                        if self.isBecomeActive {
+                        
+                            if HMUserDefaults.isOpenNumSwitch{
+                                
+                                self.dismiss(animated: true, completion: nil)
+
+                            
+                            }
+                            
+                            return
+                        
+                        }
+                        
+                        
+                        
                         self.title = "成功解锁"
                         
                         NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPWNotificationName.GoHome.rawValue), object: nil)
@@ -109,8 +130,19 @@ class LockFaildViewController: UIViewController {
                 }else{
                     
                     
+                    
                     if HMUserDefaults.isOpenNumSwitch{
                     
+                        if self.isBecomeActive{
+                        
+                          HMUserDefaults.isOpenfail = true
+                            self.dismiss(animated: true, completion: nil)
+                            return
+
+                        }
+                        
+                        
+                        
                    
                      DispatchQueue.main.async {
                          self.title = "解锁失败"

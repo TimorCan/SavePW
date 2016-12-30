@@ -9,6 +9,7 @@
 import UIKit
 import Eureka
 import SVProgressHUD
+import AVFoundation
 
 enum AddType : Int {
     case nomarl = 0
@@ -17,12 +18,32 @@ enum AddType : Int {
 }
 
 
+class EurekaLogoView: UIView {
+    
+    var imageView:UIImageView?
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        imageView = UIImageView(image: UIImage(named: "jiqimao.jpg"))
+        imageView?.frame = CGRect(x: 0, y: 0, width: 320, height: 180)
+        imageView?.autoresizingMask = .flexibleWidth
+        self.frame = CGRect(x: 0, y: 0, width: 320, height: 130)
+        imageView?.contentMode = .scaleAspectFit
+        self.addSubview(imageView!)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
 //拍照存储
 class SPAddCameraVC: FormViewController {
     
-    
+    var contentImages:Array = [UIImage]()
     var isDisable:Condition = false // 编辑
     var isDisableBool:Bool = false // 编辑 布尔值
+        
         {
         didSet{
            
@@ -125,7 +146,28 @@ class SPAddCameraVC: FormViewController {
                     self?.model?.lastDate = value
                 })
         
-            +++ Section()
+            +++ Section(){
+                $0.tag = "EurekaLogoView"
+                
+                var footer = HeaderFooterView<EurekaLogoView>(.class)
+                
+                footer.onSetupView = { logo,_ in
+                 
+                    if self.isDisableBool && self.model?.imageData != nil{
+                        
+                        
+                        
+                     logo.imageView?.image = UIImage.init(data: (self.model?.imageData)!)
+                    }
+                    
+                 
+                }
+                
+                $0.footer = footer
+                
+                
+            }
+
             <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "添加照片"
                 
@@ -150,6 +192,16 @@ class SPAddCameraVC: FormViewController {
         }
         
         let confirmAction = UIAlertAction.init(title: "拍照", style: .default) { [weak self](_) in
+            
+            if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == AVAuthorizationStatus.denied{
+              
+//                SVProgressHUD.showError(withStatus: "获取相机权限失败")
+                 self?.showAlertWithCameraAuth()
+                
+                return
+            
+            }
+            
              self?.AddPhotoClick(sourceType: .camera)
             
         }
@@ -167,6 +219,29 @@ class SPAddCameraVC: FormViewController {
         
         
         
+    }
+    
+    
+    func showAlertWithCameraAuth()  {
+        let alertController = UIAlertController.init(title: "无法拍摄", message: "拍照功能被限制,\n请到设置-相机打开", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction.init(title: "以后再设置", style: .cancel) { (_) in
+            
+        }
+        
+        let confirmAction = UIAlertAction.init(title: "去设置", style: .default) { (_) in
+            
+            //跳转到设置界面
+            UIApplication.shared.openURL(URL.init(string: UIApplicationOpenSettingsURLString)!)
+            
+            
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(confirmAction)
+        
+        present(alertController, animated: true, completion: nil)
+
     }
     
     
@@ -194,6 +269,9 @@ class SPAddCameraVC: FormViewController {
     
     
     @IBAction func doneAction(_ sender: UIBarButtonItem) {
+        
+        
+        
         
         
         if model?.nickName != nil  && (model?.nickName.characters.count)! > 0 {
@@ -226,6 +304,39 @@ extension SPAddCameraVC: UIImagePickerControllerDelegate,UINavigationControllerD
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //这里获取xiang
+        
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        
+        contentImages.removeAll()
+        
+        contentImages.append(image)
+        
+        let section:Section =  form.sectionBy(tag: "EurekaLogoView")!
+        var footer = HeaderFooterView<EurekaLogoView>(.class)
+        
+        footer.onSetupView = { logo,_ in
+            
+           logo.imageView?.image = self.contentImages.first
+          
+           self.model?.imageData = UIImagePNGRepresentation(self.contentImages.first!)
+            
+        }
+        
+        section.footer = footer
+        
+        section.reload()
+        
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
         
     }
 }
