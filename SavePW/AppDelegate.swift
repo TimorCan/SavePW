@@ -106,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UNLockViewController") as! UNLockViewController
                     vc.isBecomeActive = true
                     let nav = UINavigationController.init(rootViewController: vc)
-                    self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                    self.window?.rootViewController?.present(nav, animated: false, completion: nil)
                     
                 }
                 
@@ -121,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LockFaildViewController") as! LockFaildViewController
             vc.isBecomeActive = true
             let nav = UINavigationController.init(rootViewController: vc)
-            self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+            self.window?.rootViewController?.present(nav, animated: false, completion: nil)
                 showPassView = false
                 return
             }
@@ -133,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UNLockViewController") as! UNLockViewController
                 vc.isBecomeActive = true
                 let nav = UINavigationController.init(rootViewController: vc)
-                self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                self.window?.rootViewController?.present(nav, animated: false, completion: nil)
                 
             }
             

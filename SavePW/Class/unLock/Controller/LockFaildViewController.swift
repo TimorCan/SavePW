@@ -139,8 +139,7 @@ class LockFaildViewController: UIViewController {
                         if self.isBecomeActive{
                         
                           HMUserDefaults.isOpenfail = true
-                            self.dismiss(animated: true, completion: nil)
-                            return
+                        
 
                         }
                         
@@ -149,7 +148,11 @@ class LockFaildViewController: UIViewController {
                    
                      DispatchQueue.main.async {
                          self.title = "解锁失败"
+                        
+                        if HMUserDefaults.isOpenNumSwitch{
+                       
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: SPWNotificationName.GoNumber.rawValue), object: nil)
+                        }
                     }
                     }
                     else{

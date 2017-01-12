@@ -139,9 +139,13 @@ class PassSettingTableViewController: UITableViewController {
                 
                 //跳转设置
                 
+                if sender.isOn == true{
                 
-                sender.isOn = false
-                HMUserDefaults.isOpenNumSwitch = sender.isOn
+                     HMUserDefaults.isOpenNumSwitch  = false
+                    return
+                }
+                
+                
                 self.performSegue(withIdentifier: "szmm", sender: nil)
             }
             

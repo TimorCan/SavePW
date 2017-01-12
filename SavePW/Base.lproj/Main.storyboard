@@ -484,13 +484,13 @@
             </objects>
             <point key="canvasLocation" x="460" y="884"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--首页-->
         <scene sceneID="Bgg-Qd-5oi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="mlP-5P-x7j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="KcA-vJ-aEJ"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="home" selectedImage="home" id="KcA-vJ-aEJ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5IM-Td-Pvu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5IM-Td-Pvu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -503,13 +503,13 @@
             </objects>
             <point key="canvasLocation" x="3168.8000000000002" y="642.72863568215894"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--我的-->
         <scene sceneID="hqx-bC-aou">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dph-cJ-YdO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Rol-F2-yKi"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="我" selectedImage="我" id="Rol-F2-yKi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="btB-Jp-LlS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="btB-Jp-LlS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -606,7 +606,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qja-hr-Oje" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UAW-4a-9bO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UAW-4a-9bO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -620,4 +620,8 @@
             <point key="canvasLocation" x="460" y="1680"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="32" height="32"/>
+        <image name="我" width="32" height="32"/>
+    </resources>
 </document>

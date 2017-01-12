@@ -10,10 +10,18 @@ import UIKit
 
 class SPTabbarViewController: UITabBarController {
 
+    let mainColor = UIColor.orange
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.tabBar.tintColor = mainColor
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : mainColor], for: UIControlState.normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : mainColor], for: UIControlState.highlighted)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.lightGray], for: UIControlState.disabled)
+        
+        UINavigationBar.appearance().tintColor = mainColor
+        
     }
 
     override func didReceiveMemoryWarning() {
