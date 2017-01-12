@@ -42,8 +42,6 @@ class UNLockViewController: FormViewController {
                 
                 }
                 
-                
-                
                 self.view.endEditing(true)
                 DispatchQueue.main.async {
                     

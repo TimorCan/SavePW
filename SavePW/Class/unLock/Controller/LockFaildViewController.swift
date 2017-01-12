@@ -35,8 +35,11 @@ class LockFaildViewController: UIViewController {
             
         }else{
             
-            if HMUserDefaults.isOpenfigSwitch && HMUserDefaults.isEnableTouchID {
+            if HMUserDefaults.isOpenfigSwitch && HMUserDefaults.isOpenfigSwitch {
+                
+                
                  fingerprintUnlock()
+                
                  return
             }else if HMUserDefaults.isOpenNumSwitch{
             

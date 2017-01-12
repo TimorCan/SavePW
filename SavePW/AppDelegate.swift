@@ -101,9 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             
             if HMUserDefaults.isOpenfail {
-                
+            
                 if HMUserDefaults.isOpenNumSwitch == true {
-                    
                     let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UNLockViewController") as! UNLockViewController
                     vc.isBecomeActive = true
                     let nav = UINavigationController.init(rootViewController: vc)
@@ -123,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.isBecomeActive = true
             let nav = UINavigationController.init(rootViewController: vc)
             self.window?.rootViewController?.present(nav, animated: true, completion: nil)
+                showPassView = false
                 return
             }
             
