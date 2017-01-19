@@ -34,9 +34,20 @@ class EurekaLogoView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+    
 }
 
 
+// MARK: - 扩展父类
+extension FormViewController
+{
+    
+
+
+}
 //拍照存储
 class SPAddCameraVC: FormViewController {
     
@@ -74,6 +85,19 @@ class SPAddCameraVC: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        
+        
+        if self.isDisableBool ==  false{
+           
+            
+            self.navigationItem.rightBarButtonItem = nil
+            let bar = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action:#selector(editorClick))
+        
+         self.navigationItem.rightBarButtonItem = bar
+        }
+        
+        
+        
         
         
         
@@ -294,8 +318,21 @@ class SPAddCameraVC: FormViewController {
         }
         
         self.callBackRefresh!(true)
-        let _ =  self.navigationController?.popViewController(animated: true)
+        let _ =  self.navigationController?.popToRootViewController(animated: true)    }
+    
+    
+    
+    @objc fileprivate func editorClick(){
+    
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SPAddCameraVC")
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
+        
+    
     }
+    
 
 }
 

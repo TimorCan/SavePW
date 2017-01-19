@@ -9,6 +9,7 @@ target 'SavePW' do
  pod 'Eureka', '~> 2.0.0-beta.1'
  pod 'SnapKit', '~> 3.0.2'
  pod 'SVProgressHUD', '~> 2.1.2'
+ pod 'Material', '~> 2.4.1'
    #转swift3配置swift库的swift version = 3.0
    post_install do |installer|
        installer.pods_project.targets.each do |target|

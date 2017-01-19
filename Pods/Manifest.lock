@@ -1,18 +1,23 @@
 PODS:
   - Eureka (2.0.0-beta.1)
+  - Material (2.4.1):
+    - Material/Core (= 2.4.1)
+  - Material/Core (2.4.1)
   - SnapKit (3.0.2)
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
   - Eureka (~> 2.0.0-beta.1)
+  - Material (~> 2.4.1)
   - SnapKit (~> 3.0.2)
   - SVProgressHUD (~> 2.1.2)
 
 SPEC CHECKSUMS:
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  Material: bdf4386e3600537077c2667764292f8dd581e541
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: b2a527bdc908eb0c73bed5ffca17797c7fc7be19
+PODFILE CHECKSUM: 4a34652d39ed03debfa24558e7b71d091d5527e0
 
 COCOAPODS: 1.0.1
